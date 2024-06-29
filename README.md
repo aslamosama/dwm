@@ -45,6 +45,7 @@ Personal build of dwm generated using [dwm-flexipatch](https://github.com/bakkeb
 - [TAPRESIZE_PATCH](https://dwm.suckless.org/patches/tapresize/)
 - [TOGGLETAG_PATCH](https://github.com/bakkeby/patches/wiki/toggletag)
 - [TRANSFER_PATCH](https://dwm.suckless.org/patches/transfer/)
+- [WARP_PATCH](https://dwm.suckless.org/patches/warp/)
 - [WINDOWROLERULE_PATCH](https://github.com/bakkeby/patches/wiki/windowrolerule/)
 - [XRDB_PATCH](http://dwm.suckless.org/patches/xrdb/)
 - TILE_LAYOUT
