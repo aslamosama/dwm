@@ -522,7 +522,6 @@ static const Rule rules[] = {
 	RULE(.class    = "Qalculate-gtk", .tags = SPTAG(2),     .isfloating = 1)
 	RULE(.instance = "spmusic",       .tags = SPTAG(3),     .isfloating = 1)
 	RULE(.instance = "spnotes",       .tags = SPTAG(4),     .isfloating = 1)
-	RULE(.instance = "spterm",        .tags = SPTAG(0),     .isfloating = 1)
 
 	RULE(.instance = "dictionary",                          .isfloating = 1)
 	RULE(.class    = "volume-ui",                           .isfloating = 1)
@@ -975,7 +974,8 @@ static const Key keys[] = {
 	{ ALTKEY,             XK_h,                     spawn,                {.v = (const char*[]){ "dmenuhandler" , NULL} } },
 	{ ALTKEY,             XK_l,                     spawn,                {.v = (const char*[]){"dictionary", NULL } } },
   { MODKEY,             XK_Return,                spawn,                {.v = (const char *[]){"st", NULL}}},
-  { ALTKEY,             XK_Return,                spawn,                {.v = (const char *[]){"kitty", "-d", "~/projects/videos/fzf", NULL}}},
+  // { ALTKEY,             XK_Return,                spawn,                {.v = (const char *[]){"kitty", "-d", "~/projects/videos/fzf", NULL}}},
+  { ALTKEY,             XK_Return,                spawn,                {.v = (const char*[]){"kitty", NULL}}},
 	{ MODKEY,             XK_v,                     spawn,                {.v = (const char*[]){"st", "men", NULL } } },
 	{ MODKEY|ShiftMask,	  XK_b,                     spawn,		            {.v = (const char*[]){ "dmenu_web", "--add" , NULL } } },
 	{ MODKEY,			        XK_n,                     spawn,		            {.v = (const char*[]){ "st", "-e", "nvim", NULL } } },
