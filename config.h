@@ -408,7 +408,10 @@ static const char *layoutmenu_cmd = "layoutmenu.sh";
 #if BAR_LAUNCHER_PATCH
 static const Launcher launchers[] = {
 	/* icon to display      command        */
-	{ "firefox",               CMD("firefox", "duckduckgo.com") },
+	{ "",               CMD("st") },
+	{ "󰈹",               CMD("firefox" ) },
+	{ "󱓞",               CMD("fuz-launcher") },
+	{ "",               CMD("st", "nvim") },
 };
 #endif // BAR_LAUNCHER_PATCH
 
