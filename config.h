@@ -428,7 +428,7 @@ static const char *scratchpadcmd[] = {"s", "st", "-n", "spterm", NULL};
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x28", NULL };
 const char *spcmd2[] = {"st", "-n", "spcalc", "-g", "120x28", "-e", "qalc", "--color", "--interactive", NULL };
 const char *spcmd3[] = {"qalculate-gtk", NULL };
-const char *spcmd4[] = {"st", "-n", "spmusic", "-g", "100x25", "-e", "ncmpcpp", NULL };
+const char *spcmd4[] = {"st", "-n", "spmusic", "-g", "100x25", "-e", "cmus", NULL };
 const char *spcmd5[] = {"st", "-n", "spnotes", "-g", "120x34", "-e", "spnotes", NULL };
 static Sp scratchpads[] = {
    /* name          cmd  */
