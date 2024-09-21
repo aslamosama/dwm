@@ -978,6 +978,7 @@ static const Key keys[] = {
 	{ MODKEY,			        XK_BackSpace,             spawn,		            {.v = (const char*[]){ "sysact", NULL } } },
 	{ MODKEY,             XK_q,                     killclient,           {0} },
 	{ MODKEY,			        XK_w,                     spawn,		            {.v = (const char*[]){ "firefox", NULL } } },
+	{ MODKEY|ShiftMask,	  XK_w,                     spawn,		            {.v = (const char*[]){ "firefox", "-P", "olddefault", NULL } } },
 	{ MODKEY,             XK_e,                     spawn,                {.v = (const char*[]){"fuz-launcher", NULL } } },
   { ALTKEY,             XK_e,                     spawn,                {.v = (const char*[]){ "networkmanager_dmenu", NULL } } },
 	{ MODKEY,			        XK_r,                     spawn,		            {.v = (const char*[]){ "st", "-e", "lf", NULL } } },
