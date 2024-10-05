@@ -914,8 +914,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 // 	#endif // BAR_DMENUMATCHTOP_PATCH
 // 	NULL
 // };
-static const char* dmenu_run_cmd[] = { "dmenu_run", "-bw", "2", "-i", "-W", "390", "-X", "961", "-Y", "15", "-l", "15", "-g", "3", NULL };
-static const char* clipmenu_cmd[]  = { "clipmenu", "-bw", "2", "-i", "-W", "290", "-X", "1061", "-Y", "15", "-l", "15", NULL };
+static const char* dmenu_run_cmd[] = { "dmenu_run", "-bw", "2", "-i", "-W", "390", "-X", "8", "-Y", "420", "-l", "15", "-g", "3", NULL };
+static const char* clipmenu_cmd[]  = { "clipmenu", "-bw", "2", "-i", "-W", "290", "-X", "8", "-Y", "420", "-l", "15", NULL };
 static const char* volume_ui_cmd[] = { "st", "-c", "volume-ui", "-g=80x15+353+20", "-e", "pulsemixer", NULL } ;
 
 #if BAR_STATUSCMD_PATCH
