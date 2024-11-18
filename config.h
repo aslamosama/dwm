@@ -1439,8 +1439,8 @@ static const Button buttons[] = {
 	{ ClkRootWin,     0,                Button1,  spawn,             SHCMD("dunstctl close-all; killall dmenu") },
 	{ ClkRootWin,     0,                Button3,  spawn,             SHCMD("dunstctl close-all; pgrep -x 'dmenu' > /dev/null && killall dmenu || dmenu_hub") },
 	#if BAR_STATUSBUTTON_PATCH
-	{ ClkButton,            0,                   Button1,        spawn,          {.v = dmenu_run_cmd } },
-	{ ClkButton,      0,                Button3,  spawn,             {.v = (const char*[]){ "dmenu_hub", NULL } } },
+	{ ClkButton,            0,                   Button3,        spawn,          {.v = dmenu_run_cmd } },
+	{ ClkButton,      0,                Button1,  spawn,             {.v = (const char*[]){ "dmenu_hub", NULL } } },
 	#endif // BAR_STATUSBUTTON_PATCH
 	{ ClkLtSymbol,          0,                   Button1,        setlayout,      {0} },
 	#if BAR_LAYOUTMENU_PATCH
