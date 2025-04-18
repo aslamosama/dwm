@@ -1093,6 +1093,7 @@ static const Key keys[] = {
   { 0,                  XF86XK_AudioPlay,         spawn,                {.v = (const char*[]){ "mpc", "play", NULL } } },
   { MODKEY|ShiftMask,   XK_F5,                    xrdb,                 {.v = NULL } },
   { 0,                  XK_F7,                    spawn,                {.v = clipmenu_cmd } },
+  { 0,                  XF86XK_Search,            togglebar,            {0} },
   { 0,                  XF86XK_MonBrightnessUp,   spawn,                {.v = (const char*[]){ "brightnessctl", "set", "+5%", NULL } } },
   { 0,                  XF86XK_MonBrightnessDown, spawn,                {.v = (const char*[]){ "brightnessctl", "set", "5%-", NULL } } },
   { 0,                  XK_Print,                 spawn,                {.v = (const char*[]){ "maimpick", NULL } } },
