@@ -418,6 +418,7 @@ static const Launcher launchers[] = {
 #if COOL_AUTOSTART_PATCH
 static const char *const autostart[] = {
   "dwmblocks", NULL,
+  "lf-file-handler", NULL,
   NULL /* terminate */
 };
 #endif // COOL_AUTOSTART_PATCH
