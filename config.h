@@ -1116,12 +1116,12 @@ static const Key keys[] = {
   { MODKEY,             XK_s,                     spawn,                {.v = (const char*[]){"st", "mangamenu", NULL } } },
   { MODKEY,             XK_d,                     spawn,                {.v = dmenu_run_cmd } },
   { MODKEY|ShiftMask,   XK_c,                     spawn,                {.v = (const char*[]){ "dmenuhandler" , NULL} } },
-  { MODKEY,            XK_c,                     spawn,                {.v = (const char*[]){"dictionary", NULL } } },
+  { MODKEY,             XK_c,                     spawn,                {.v = (const char*[]){"dictionary", NULL } } },
+  { ALTKEY,             XK_c,                     spawn,                {.v = (const char*[]){"processkill", NULL } } },
   { MODKEY,             XK_Return,                spawn,                {.v = (const char *[]){"st", NULL}}},
   // { ALTKEY,             XK_Return,                spawn,                {.v = (const char *[]){"kitty", "-d", "~/projects/videos/fzf", NULL}}},
   { ALTKEY,             XK_Return,                spawn,                {.v = (const char*[]){"kitty", NULL}}},
   { MODKEY,             XK_v,                     spawn,                {.v = (const char*[]){"st", "men", NULL } } },
-  { MODKEY|ShiftMask,   XK_b,                     spawn,                {.v = (const char*[]){ "dmenu_web", "--add" , NULL } } },
   { MODKEY,             XK_n,                     spawn,                {.v = (const char*[]){ "st", "-e", "nvim", NULL } } },
   { ALTKEY,             XK_n,                     spawn,                {.v = (const char*[]){ "kitty", "nvim", NULL } } },
   { MODKEY|ShiftMask,   XK_n,                     spawn,                {.v = (const char*[]){ "st", "-e", "newsboat", NULL } } },
@@ -1564,8 +1564,8 @@ static const Command commands[] = {
 #endif //
 static const Button buttons[] = {
   /* click                event mask           button          function        argument */
-  { ClkRootWin,     0,                Button1,  spawn,             SHCMD("dunstctl close-all; killall dmenu") },
-  { ClkRootWin,     0,                Button3,  spawn,             SHCMD("dunstctl close-all; pgrep -x 'dmenu' > /dev/null && killall dmenu || dmenu_hub") },
+  { ClkRootWin,     0,                Button1,  spawn,             SHCMD("dunstctl close-all && killall dmenu") },
+  { ClkRootWin,     0,                Button3,  spawn,             SHCMD("dunstctl close-all && killall dmenu || dmenu_hub") },
   #if BAR_STATUSBUTTON_PATCH
   { ClkButton,            0,                   Button3,        spawn,          {.v = dmenu_run_cmd } },
   { ClkButton,      0,                Button1,  spawn,             {.v = (const char*[]){ "dmenu_hub", NULL } } },
