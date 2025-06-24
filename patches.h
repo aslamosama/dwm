@@ -84,6 +84,9 @@
 /* Show layout symbol in bar */
 #define BAR_LTSYMBOL_PATCH 1
 
+/* Adds a colour schme for the layout symbol */
+#define BAR_LTSYMBOL_SCHEME_PATCH 0
+
 /* Adds powerline arrows for the status.
  * This uses statuscolors logic for choosing colors for the powerline. As these markers
  * are also control characters there is no explicit statuscmd support for this patch.
@@ -289,6 +292,12 @@
  * https://codemadness.org/paste/dwm-border-bar.patch
  */
 #define BAR_BORDER_PATCH 0
+
+/* Optional addon for the border patch. This makes it so that the bar border is drawn using
+ * the background colour of the bar as opposed to the border colour. This allows for the
+ * border to have the same transparency as the background thus giving a more uniform look.
+ */
+#define BAR_BORDER_COLBG_PATCH 0
 
 /* This patch centers the WM_NAME of the currently selected window on the status bar.
  * This is compatible with the wintitle, bartabgroups, flexwintitle and awesomebar bar

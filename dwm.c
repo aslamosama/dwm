@@ -148,6 +148,9 @@ enum {
 	SchemeHidNorm,
 	SchemeHidSel,
 	SchemeUrg,
+	#if BAR_LTSYMBOL_SCHEME_PATCH
+	SchemeLtSymbol,
+	#endif // BAR_LTSYMBOL_SCHEME_PATCH
 	#if RENAMED_SCRATCHPADS_PATCH
 	SchemeScratchSel,
 	SchemeScratchNorm,
@@ -1930,7 +1933,11 @@ drawbarwin(Bar *bar)
 	const BarRule *br;
 
 	if (bar->borderpx) {
+		#if BAR_BORDER_COLBG_PATCH
+		XSetForeground(drw->dpy, drw->gc, scheme[bar->borderscheme][ColBg].pixel);
+		#else
 		XSetForeground(drw->dpy, drw->gc, scheme[bar->borderscheme][ColBorder].pixel);
+		#endif // BAR_BORDER_COLBG_PATCH
 		XFillRectangle(drw->dpy, drw->drawable, drw->gc, 0, 0, bar->bw, bar->bh);
 	}
 
