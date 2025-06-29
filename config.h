@@ -1125,6 +1125,7 @@ static const Key keys[] = {
   { MODKEY,             XK_w,                     spawn,                {.v = (const char*[]){ "firefox", NULL } } },
   { MODKEY|ShiftMask,   XK_w,                     spawn,                {.v = (const char*[]){ "firefox", "-P", "olddefault", NULL } } },
   { MODKEY,             XK_e,                     spawn,                {.v = (const char*[]){"fuz-launcher", NULL } } },
+  { MODKEY|ShiftMask,   XK_e,                     spawn,                {.v = (const char*[]){ "emacs", NULL } } },
   { ALTKEY,             XK_e,                     spawn,                {.v = (const char*[]){ "networkmanager_dmenu", NULL } } },
   { MODKEY,             XK_r,                     spawn,                {.v = (const char*[]){ "st", "-e", "lf", NULL } } },
   { MODKEY|ShiftMask,   XK_r,                     spawn,                {.v = (const char*[]){ "thunar", NULL } } },
