@@ -1131,6 +1131,7 @@ static const Key keys[] = {
   { MODKEY|ShiftMask,   XK_r,                     spawn,                {.v = (const char*[]){ "thunar", NULL } } },
   { MODKEY,             XK_p,                     spawn,                {.v = (const char*[]){"st", "-c", "gping-ui", "-g=80x15+353+20", "-e", "gping", "duckduckgo.com", NULL } } },
   { MODKEY,             XK_a,                     spawn,                {.v = (const char*[]){ "dmenu_hub", NULL } } },
+  { MODKEY|ShiftMask,   XK_a,                     spawn,                {.v = (const char*[]){ "ariang-launcher", NULL } } },
   { MODKEY,             XK_s,                     spawn,                {.v = (const char*[]){"st", "mangamenu", NULL } } },
   { MODKEY,             XK_d,                     spawn,                {.v = dmenu_run_cmd } },
   { MODKEY|ShiftMask,   XK_c,                     spawn,                {.v = (const char*[]){ "dmenuhandler" , NULL} } },
