@@ -548,6 +548,7 @@ static const Rule rules[] = {
   RULE(.title    = "mechivibes",    .tags = 1 << 5,       .switchtag = 3)
   RULE(.class    = "Zathura",       .tags = 1 << 6,       .switchtag = 3)
   RULE(.title    = "nsxiv",         .tags = 1 << 7,       .switchtag = 3)
+  RULE(.class    = "handler_output",.tags = 1 << 7,       .switchtag = 0)
   RULE(.class    = "Gimp",          .tags = 1 << 8,       .switchtag = 3)
   RULE(.instance = "libreoffice",   .tags = 1 << 8,       .switchtag = 3)
 
@@ -959,7 +960,7 @@ static const char *statuscmd[] = { "/bin/sh", "-c", NULL, NULL };
 static const Key on_empty_keys[] = {
   /* modifier key            function    argument */
   {0,         XK_e,          spawn,      {.v = (const char*[]){"fuz-launcher", NULL } } },
-  {0,         XK_f,          spawn,      {.v = (const char*[]){"fuz-launcher", NULL } } },
+  {0,         XK_f,          spawn,      {.v = (const char*[]){"dmenuhandler", NULL } } },
   {0,         XK_w,          spawn,      {.v = (const char*[]){"firefox", NULL } } },
   {0,         XK_grave,      spawn,      {.v = (const char*[]){"dmenunerdsymbols", NULL } } },
   {0,         XK_BackSpace,  spawn,      {.v = (const char*[]){"sysact", NULL } } },
@@ -1131,10 +1132,10 @@ static const Key keys[] = {
   { MODKEY|ShiftMask,   XK_r,                     spawn,                {.v = (const char*[]){ "thunar", NULL } } },
   { MODKEY,             XK_p,                     spawn,                {.v = (const char*[]){"st", "-c", "gping-ui", "-g=80x15+353+20", "-e", "gping", "duckduckgo.com", NULL } } },
   { MODKEY,             XK_a,                     spawn,                {.v = (const char*[]){ "dmenu_hub", NULL } } },
-  { MODKEY|ShiftMask,   XK_a,                     spawn,                {.v = (const char*[]){ "ariang-launcher", NULL } } },
   { MODKEY,             XK_s,                     spawn,                {.v = (const char*[]){"st", "mangamenu", NULL } } },
   { MODKEY,             XK_d,                     spawn,                {.v = dmenu_run_cmd } },
-  { MODKEY|ShiftMask,   XK_c,                     spawn,                {.v = (const char*[]){ "dmenuhandler" , NULL} } },
+  { MODKEY,             XK_f,                     spawn,                {.v = (const char*[]){ "dmenuhandler" , NULL} } },
+  { MODKEY,             XK_z,                     spawn,                {.v = (const char*[]){ "ariang-launcher", NULL } } },
   { MODKEY,             XK_c,                     spawn,                {.v = (const char*[]){"dictionary", NULL } } },
   { ALTKEY,             XK_c,                     spawn,                {.v = (const char*[]){"processkill", NULL } } },
   { MODKEY,             XK_Return,                spawn,                {.v = (const char *[]){"st", NULL}}},
