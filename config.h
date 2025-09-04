@@ -560,6 +560,7 @@ static const Rule rules[] = {
 
   RULE(.instance = "dictionary",                          .isfloating = 1)
   RULE(.class    = "volume-ui",                           .isfloating = 1)
+  RULE(.class    = "bluetui-ui",                          .isfloating = 1)
   RULE(.class    = "gping-ui",                            .isfloating = 1)
   RULE(.class    = "PersepolisDM",  .title = "(None)None",.isfloating = 1)
   RULE(.class    = "gnuplot_qt",                          .isfloating = 1)
@@ -949,6 +950,7 @@ static const char* dmenu_run_cmd[] = { "dmenu_run", "-i", "-p", "dmenu_run:", NU
 /* static const char* clipmenu_cmd[]  = { "clipmenu", "-bw", "2", "-i", "-W", "290", "-X", "8", "-Y", "420", "-l", "15", NULL }; */
 static const char* clipmenu_cmd[]  = { "clipmenu", "-i", "-l", "0", "-p", "Clipboard:", NULL };
 static const char* volume_ui_cmd[] = { "st", "-c", "volume-ui", "-g=80x15+353+20", "-e", "pulsemixer", NULL } ;
+static const char* bluetui_ui_cmd[] = { "st", "-c", "bluetui-ui", "-g=80x20+353+20", "-e", "bluetui", NULL } ;
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
@@ -1152,6 +1154,7 @@ static const Key keys[] = {
   // { ALTKEY,             XK_Return,                spawn,                {.v = (const char *[]){"kitty", "-d", "~/projects/videos/fzf", NULL}}},
   { ALTKEY,             XK_Return,                spawn,                {.v = (const char*[]){"kitty", NULL}}},
   { MODKEY,             XK_v,                     spawn,                {.v = (const char*[]){"st", "men", NULL } } },
+  { MODKEY|ShiftMask,   XK_b,                     spawn,                {.v = bluetui_ui_cmd } },
   { MODKEY,             XK_n,                     spawn,                {.v = (const char*[]){ "st", "-e", "nvim", NULL } } },
   { ALTKEY,             XK_n,                     spawn,                {.v = (const char*[]){ "kitty", "nvim", NULL } } },
   { MODKEY|ShiftMask,   XK_n,                     spawn,                {.v = (const char*[]){ "st", "-e", "newsboat", NULL } } },
