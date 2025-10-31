@@ -1464,6 +1464,9 @@ static const Key keys[] = {
   { MODKEY|Mod4Mask,              XK_Right,      switchtag,              { .ui = SWITCHTAG_RIGHT | SWITCHTAG_TAG | SWITCHTAG_VIEW } },
   { MODKEY|Mod4Mask,              XK_Left,       switchtag,              { .ui = SWITCHTAG_LEFT  | SWITCHTAG_TAG | SWITCHTAG_VIEW } },
   #endif // BAR_TAGGRID_PATCH
+  #if MOVECENTER_PATCH
+  { MODKEY,                       XK_x,          movecenter,             {0} }, // note keybinding conflict with killunsel
+  #endif // MOVECENTER_PATCH
   #if MOVEPLACE_PATCH
   { MODKEY,                       XK_KP_7,       moveplace,              {.ui = WIN_NW }},   /* XK_KP_Home,  */
   { MODKEY,                       XK_KP_8,       moveplace,              {.ui = WIN_N  }},   /* XK_KP_Up,    */
@@ -1733,6 +1736,9 @@ static const Signal signals[] = {
   #if MOVEPLACE_PATCH
   { "moveplace",               moveplace },
   #endif // MOVEPLACE_PATCH
+  #if MOVECENTER_PATCH
+  { "movecenter",              movecenter },
+  #endif // MOVECENTER_PATCH
   #if NAMETAG_PATCH
   { "nametag",                 nametag },
   #endif // NAMETAG_PATCH
@@ -1950,6 +1956,9 @@ static IPCCommand ipccommands[] = {
   IPCCOMMAND( mpdchange, 1, {ARG_TYPE_SINT} ),
   IPCCOMMAND( mpdcontrol, 1, {ARG_TYPE_NONE} ),
   #endif // MPDCONTROL_PATCH
+  #if MOVECENTER_PATCH
+  IPCCOMMAND( movecenter, 1, {ARG_TYPE_NONE} ),
+  #endif // MOVECENTER_PATCH
   #if MOVEPLACE_PATCH
   IPCCOMMAND( moveplace, 1, {ARG_TYPE_UINT} ),
   #endif // MOVEPLACE_PATCH
