@@ -562,8 +562,9 @@ static const Rule rules[] = {
   RULE(.class    = "volume-ui",                           .isfloating = 1)
   RULE(.class    = "bluetui-ui",                          .isfloating = 1)
   RULE(.class    = "gping-ui",                            .isfloating = 1)
-  RULE(.class    = "PersepolisDM",  .title = "(None)None",.isfloating = 1)
   RULE(.class    = "gnuplot_qt",                          .isfloating = 1)
+  RULE(.class    = "vimtyper",  .title    = "vimtyper",  .isfloating = 1)
+
   #if RENAMED_SCRATCHPADS_PATCH
   RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
   #elif SCRATCHPADS_PATCH
@@ -1158,6 +1159,7 @@ static const Key keys[] = {
   // { ALTKEY,             XK_Return,                spawn,                {.v = (const char *[]){"kitty", "-d", "~/projects/videos/fzf", NULL}}},
   { ALTKEY,             XK_Return,                spawn,                {.v = (const char*[]){"kitty", NULL}}},
   { MODKEY,             XK_v,                     spawn,                {.v = (const char*[]){"st", "men", NULL } } },
+  { ALTKEY,             XK_v,                     spawn,                {.v = (const char*[]){"nvimtyper", NULL } } },
   { MODKEY|ShiftMask,   XK_b,                     spawn,                {.v = bluetui_ui_cmd } },
   { MODKEY,             XK_n,                     spawn,                {.v = (const char*[]){ "st", "-e", "nvim", NULL } } },
   { ALTKEY,             XK_n,                     spawn,                {.v = (const char*[]){ "kitty", "nvim", NULL } } },
