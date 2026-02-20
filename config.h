@@ -563,6 +563,7 @@ static const Rule rules[] = {
   RULE(.class    = "bluetui-ui",                          .isfloating = 1)
   RULE(.class    = "gping-ui",                            .isfloating = 1)
   RULE(.class    = "gnuplot_qt",                          .isfloating = 1)
+  RULE(.class    = "matplotlib",    .tags = 1 << 8,       .switchtag = 3)
   RULE(.class    = "vimtyper",  .title    = "vimtyper",  .isfloating = 1)
 
   #if RENAMED_SCRATCHPADS_PATCH
@@ -950,6 +951,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char* dmenu_run_cmd[] = { "dmenu_run", "-i", "-p", "dmenu_run:", NULL };
 /* static const char* clipmenu_cmd[]  = { "clipmenu", "-bw", "2", "-i", "-W", "290", "-X", "8", "-Y", "420", "-l", "15", NULL }; */
 static const char* clipmenu_cmd[]  = { "clipmenu", "-i", "-l", "0", "-p", "Clipboard:", NULL };
+static const char* ms_cmd[]  = { "st", "-e", "ms.sh", NULL };
 static const char* volume_ui_cmd[] = { "st", "-c", "volume-ui", "-g=80x15+353+20", "-e", "pulsemixer", NULL } ;
 static const char* bluetui_ui_cmd[] = { "st", "-c", "bluetui-ui", "-g=80x20+353+20", "-e", "bluetui", NULL } ;
 
@@ -1129,7 +1131,8 @@ static const Key keys[] = {
   { 0,                  XF86XK_AudioPlay,         spawn,                {.v = (const char*[]){ "mpc", "play", NULL } } },
   { MODKEY|ShiftMask,   XK_F5,                    xrdb,                 {.v = NULL } },
   { 0,                  XK_F7,                    spawn,                {.v = clipmenu_cmd } },
-  { 0,                  XF86XK_Search,            togglebar,            {0} },
+  // { 0,                  XF86XK_Search,            togglebar,            {0} },
+  { 0,                  XF86XK_Search,            spawn,                {.v = ms_cmd } },
   { 0,                  XF86XK_MonBrightnessUp,   spawn,                {.v = (const char*[]){ "brightnessctl", "set", "+5%", NULL } } },
   { 0,                  XF86XK_MonBrightnessDown, spawn,                {.v = (const char*[]){ "brightnessctl", "set", "5%-", NULL } } },
   { 0,                  XK_Print,                 spawn,                {.v = (const char*[]){ "maimpick", NULL } } },
