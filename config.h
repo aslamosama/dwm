@@ -62,7 +62,7 @@ static const int showtab                 = showtab_auto;        /* Default tab b
 static const int toptab                  = False;               /* False means bottom tab bar */
 #endif // TAB_PATCH
 #if BAR_HEIGHT_PATCH
-static const int bar_height              = 0;   /* 0 means derive from font, >= 1 explicit height */
+static const int bar_height              = 24;   /* 0 means derive from font, >= 1 explicit height */
 #endif // BAR_HEIGHT_PATCH
 #if BAR_PADDING_PATCH
 static const int vertpad                 = 10;  /* vertical padding of bar */
@@ -171,7 +171,7 @@ static void (*bartabmonfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 #if BAR_PANGO_PATCH
 static const char font[]                 = "monospace 10";
 #else
-static const char *fonts[]               = { "CaskaydiaCove NF :pixelsize=12" };
+static const char *fonts[]               = { "CaskaydiaCove NF :pixelsize=16" };
 #endif // BAR_PANGO_PATCH
 static const char dmenufont[]            = "monospace:size=10";
 
@@ -540,13 +540,14 @@ static const Rule rules[] = {
   RULE(.wintype  = WTYPE "TOOLBAR",                       .isfloating = 1)
   RULE(.wintype  = WTYPE "SPLASH",                        .isfloating = 1)
 
-  RULE(.class    = "firefox",       .tags = 1 << 1,       .switchtag = 1)
+  // RULE(.class    = "firefox",       .tags = 1 << 1,       .switchtag = 1)
+  RULE(.title    = "dragon",        .tags = 1 << 1,       .iscentered = 1, .switchtag = 1)
   RULE(.title    = "nvim",          .tags = 1 << 2,       .switchtag = 1)
   RULE(.title    = "lf",            .tags = 1 << 3,       .switchtag = 1)
   RULE(.class    = "mpv",           .tags = 1 << 4,       .switchtag = 3)
   RULE(.title    = "newsboat",      .tags = 1 << 5,       .switchtag = 3)
   RULE(.title    = "mechivibes",    .tags = 1 << 5,       .switchtag = 3)
-  RULE(.class    = "Zathura",       .tags = 1 << 6,       .switchtag = 3)
+  // RULE(.class    = "Zathura",       .tags = 1 << 6,       .switchtag = 3)
   RULE(.title    = "nsxiv",         .tags = 1 << 7,       .switchtag = 3)
   RULE(.class    = "handler_output",.tags = 1 << 7,       .switchtag = 0)
   RULE(.class    = "Gimp",          .tags = 1 << 8,       .switchtag = 3)
@@ -564,6 +565,7 @@ static const Rule rules[] = {
   RULE(.class    = "gping-ui",                            .isfloating = 1)
   RULE(.class    = "gnuplot_qt",                          .isfloating = 1)
   RULE(.class    = "matplotlib",    .tags = 1 << 8,       .switchtag = 3)
+  RULE(.class    = "gksqt",         .tags = 1 << 8,       .switchtag = 3)
   RULE(.class    = "vimtyper",  .title    = "vimtyper",  .isfloating = 1)
 
   #if RENAMED_SCRATCHPADS_PATCH
@@ -952,8 +954,8 @@ static const char* dmenu_run_cmd[] = { "dmenu_run", "-i", "-p", "dmenu_run:", NU
 /* static const char* clipmenu_cmd[]  = { "clipmenu", "-bw", "2", "-i", "-W", "290", "-X", "8", "-Y", "420", "-l", "15", NULL }; */
 static const char* clipmenu_cmd[]  = { "clipmenu", "-i", "-l", "0", "-p", "Clipboard:", NULL };
 static const char* ms_cmd[]  = { "st", "-e", "ms.sh", NULL };
-static const char* volume_ui_cmd[] = { "st", "-c", "volume-ui", "-g=80x15+353+20", "-e", "pulsemixer", NULL } ;
-static const char* bluetui_ui_cmd[] = { "st", "-c", "bluetui-ui", "-g=80x20+353+20", "-e", "bluetui", NULL } ;
+static const char* volume_ui_cmd[] = { "st", "-c", "volume-ui", "-g=80x15+513+20", "-e", "pulsemixer", NULL } ;
+static const char* bluetui_ui_cmd[] = { "st", "-c", "bluetui-ui", "-g=80x20+513+20", "-e", "bluetui", NULL } ;
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
@@ -979,13 +981,13 @@ static const Key on_empty_keys[] = {
   {0,         XK_w,          spawn,      {.v = (const char*[]){"firefox", NULL } } },
   {0,         XK_grave,      spawn,      {.v = (const char*[]){"dmenunerdsymbols", NULL } } },
   {0,         XK_BackSpace,  spawn,      {.v = (const char*[]){"sysact", NULL } } },
-  {0,         XK_r,          spawn,      {.v = (const char*[]){"st", "-e", "lf", NULL } } },
+  {0,         XK_r,          spawn,      {.v = (const char*[]){"st", "-e", "yazi", NULL } } },
   {0,         XK_Return,     spawn,      {.v = (const char*[]){"st", "-c", "st-terminal", NULL } } },
   {0,         XK_d,          spawn,      {.v = dmenu_run_cmd } },
   {0,         XK_a,          spawn,      {.v = (const char*[]){"dmenu_hub", NULL } } },
   {0,         XK_space,      spawn,      {.v = (const char*[]){"dmenu_web", NULL } } },
   {0,         XK_n,          spawn,      {.v = (const char*[]){"st", "-e", "nvim", NULL } } },
-  {0,         XK_p,          spawn,      {.v = (const char*[]){"st", "-c", "gping-ui", "-g=80x15+353+20", "-e", "gping", "duckduckgo.com", NULL } } },
+  {0,         XK_p,          spawn,      {.v = (const char*[]){"st", "-c", "gping-ui", "-g=80x15+513+20", "-e", "gping", "duckduckgo.com", NULL } } },
   {0,         XK_v,          spawn,      {.v = (const char*[]){"st", "men", NULL } } },
 };
 #endif // ON_EMPTY_KEYS_PATCH
@@ -1130,9 +1132,9 @@ static const Key keys[] = {
   { 0,                  XF86XK_AudioPause,        spawn,                {.v = (const char*[]){ "mpc", "pause", NULL } } },
   { 0,                  XF86XK_AudioPlay,         spawn,                {.v = (const char*[]){ "mpc", "play", NULL } } },
   { MODKEY|ShiftMask,   XK_F5,                    xrdb,                 {.v = NULL } },
-  { 0,                  XK_F7,                    spawn,                {.v = clipmenu_cmd } },
+  { 0,                  XF86XK_Launch8,           spawn,                {.v = clipmenu_cmd } },
   // { 0,                  XF86XK_Search,            togglebar,            {0} },
-  { 0,                  XF86XK_Search,            spawn,                {.v = ms_cmd } },
+  { MODKEY|ShiftMask,   XK_Home,                  spawn,                {.v = ms_cmd } },
   { 0,                  XF86XK_MonBrightnessUp,   spawn,                {.v = (const char*[]){ "brightnessctl", "set", "+5%", NULL } } },
   { 0,                  XF86XK_MonBrightnessDown, spawn,                {.v = (const char*[]){ "brightnessctl", "set", "5%-", NULL } } },
   { 0,                  XK_Print,                 spawn,                {.v = (const char*[]){ "maimpick", NULL } } },
@@ -1146,11 +1148,11 @@ static const Key keys[] = {
   { MODKEY,             XK_w,                     spawn,                {.v = (const char*[]){ "firefox", NULL } } },
   { MODKEY|ShiftMask,   XK_w,                     spawn,                {.v = (const char*[]){ "firefox", "-P", "olddefault", NULL } } },
   { MODKEY,             XK_e,                     spawn,                {.v = (const char*[]){"fuz-launcher", NULL } } },
-  { MODKEY|ShiftMask,   XK_e,                     spawn,                {.v = (const char*[]){ "emacs", NULL } } },
+  { MODKEY,             XK_Home,                  spawn,                {.v = (const char*[]){ "emacs", NULL } } },
   { ALTKEY,             XK_e,                     spawn,                {.v = (const char*[]){ "networkmanager_dmenu", NULL } } },
-  { MODKEY,             XK_r,                     spawn,                {.v = (const char*[]){ "st", "-e", "lf", NULL } } },
+  { MODKEY,             XK_r,                     spawn,                {.v = (const char*[]){ "st", "-e", "yazi", NULL } } },
   { MODKEY|ShiftMask,   XK_r,                     spawn,                {.v = (const char*[]){ "thunar", NULL } } },
-  { MODKEY,             XK_p,                     spawn,                {.v = (const char*[]){"st", "-c", "gping-ui", "-g=80x15+353+20", "-e", "gping", "duckduckgo.com", NULL } } },
+  { MODKEY,             XK_p,                     spawn,                {.v = (const char*[]){"st", "-c", "gping-ui", "-g=80x15+513+20", "-e", "gping", "duckduckgo.com", NULL } } },
   { MODKEY,             XK_a,                     spawn,                {.v = (const char*[]){ "dmenu_hub", NULL } } },
   { MODKEY,             XK_s,                     spawn,                {.v = (const char*[]){"st", "mangamenu", NULL } } },
   { MODKEY,             XK_d,                     spawn,                {.v = dmenu_run_cmd } },
@@ -1214,8 +1216,8 @@ static const Key keys[] = {
   { MODKEY,                       XK_v,          switchcol,              {0} },
   #endif // SWITCHCOL_PATCH
   #if ROTATESTACK_PATCH
-  { MODKEY|ControlMask,           XK_Up,         rotatestack,            {.i = +1 } },
-  { MODKEY|ControlMask,           XK_Down,       rotatestack,            {.i = -1 } },
+  { 0,                            XK_Prior,      rotatestack,            {.i = +1 } },
+  { ShiftMask,                    XK_Prior,      rotatestack,            {.i = -1 } },
   #endif // ROTATESTACK_PATCH
   #if INPLACEROTATE_PATCH
   { MODKEY|Mod4Mask,              XK_j,          inplacerotate,          {.i = +2 } }, // same as rotatestack
@@ -1310,8 +1312,8 @@ static const Key keys[] = {
   { MODKEY|ShiftMask,             XK_backslash,  shiftview,              { .i = +1 } },
   #endif // SHIFTVIEW_PATCH
   #if SHIFTVIEW_CLIENTS_PATCH
-  { MODKEY|ControlMask,              XK_Left,   shiftviewclients,       { .i = -1 } },
-  { MODKEY|ControlMask,              XK_Right,  shiftviewclients,       { .i = +1 } },
+  { ShiftMask,                       XK_Next,   shiftviewclients,       { .i = -1 } },
+  { 0,                               XK_Next,   shiftviewclients,       { .i = +1 } },
   #endif // SHIFTVIEW_CLIENTS_PATCH
   #if SHIFTBOTH_PATCH
   { MODKEY|Mod1Mask,              XK_Left,       shiftboth,              { .i = -1 } }, // note keybinding conflict with focusadjacenttag tagandviewtoleft placedir
