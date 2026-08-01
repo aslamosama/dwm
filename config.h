@@ -542,7 +542,6 @@ static const Rule rules[] = {
   RULE(.wintype  = WTYPE "SPLASH",                        .isfloating = 1)
 
   // RULE(.class    = "firefox",       .tags = 1 << 1,       .switchtag = 1)
-  RULE(.title    = "dragon",        .tags = 1 << 1,       .iscentered = 1, .switchtag = 1)
   RULE(.title    = "nvim",          .tags = 1 << 2,       .switchtag = 1)
   RULE(.title    = "lf",            .tags = 1 << 3,       .switchtag = 1)
   RULE(.class    = "mpv",           .tags = 1 << 4,       .switchtag = 3)
@@ -568,6 +567,15 @@ static const Rule rules[] = {
   RULE(.class    = "matplotlib",    .tags = 1 << 8,       .switchtag = 3)
   RULE(.class    = "gksqt",         .tags = 1 << 8,       .switchtag = 3)
   RULE(.class    = "vimtyper",  .title    = "vimtyper",  .isfloating = 1)
+	RULE(.instance = "dragon-tag1", .class = "Dragon-drop",  .tags = 1 << 0,       .iscentered = 1, .switchtag = 1)
+	RULE(.instance = "dragon-tag2", .class = "Dragon-drop", .tags = 1 << 1,       .iscentered = 1, .switchtag = 1)
+	RULE(.instance = "dragon-tag3", .class = "Dragon-drop", .tags = 1 << 2,       .iscentered = 1, .switchtag = 1)
+	RULE(.instance = "dragon-tag4", .class = "Dragon-drop", .tags = 1 << 3,       .iscentered = 1, .switchtag = 1)
+	RULE(.instance = "dragon-tag5", .class = "Dragon-drop", .tags = 1 << 4,       .iscentered = 1, .switchtag = 1)
+	RULE(.instance = "dragon-tag6", .class = "Dragon-drop", .tags = 1 << 5,       .iscentered = 1, .switchtag = 1)
+	RULE(.instance = "dragon-tag7", .class = "Dragon-drop", .tags = 1 << 6,       .iscentered = 1, .switchtag = 1)
+	RULE(.instance = "dragon-tag8", .class = "Dragon-drop", .tags = 1 << 7,       .iscentered = 1, .switchtag = 1)
+	RULE(.instance = "dragon-tag9", .class = "Dragon-drop", .tags = 1 << 8,       .iscentered = 1, .switchtag = 1)
 
   #if RENAMED_SCRATCHPADS_PATCH
   RULE(.instance = "spterm", .scratchkey = 's', .isfloating = 1)
