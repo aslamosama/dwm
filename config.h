@@ -551,6 +551,7 @@ static const Rule rules[] = {
   RULE(.title    = "nsxiv",         .tags = 1 << 7,       .switchtag = 3)
   RULE(.class    = "handler_output",.tags = 1 << 7,       .switchtag = 0)
   RULE(.class    = "Gimp",          .tags = 1 << 8,       .switchtag = 3)
+  RULE(.class    = "ret.sh",        .tags = 1 << 8,       .switchtag = 3)
   RULE(.instance = "libreoffice",   .tags = 1 << 8,       .switchtag = 3)
 
   RULE(.instance = "spterm",        .tags = SPTAG(0),     .isfloating = 1)
@@ -936,7 +937,7 @@ static const char *xkb_layouts[]  = {
 #endif // STACKER_PATCH
 
 #if BAR_HOLDBAR_PATCH
-#define HOLDKEY 0 // replace 0 with the keysym to activate holdbar
+#define HOLDKEY 0xffeb // replace 0 with the keysym to activate holdbar
 #endif // BAR_HOLDBAR_PATCH
 
 /* commands */
@@ -1147,6 +1148,7 @@ static const Key keys[] = {
   { 0,                  XF86XK_MonBrightnessDown, spawn,                {.v = (const char*[]){ "brightnessctl", "set", "5%-", NULL } } },
   { 0,                  XK_Print,                 spawn,                {.v = (const char*[]){ "maimpick", NULL } } },
   { MODKEY,             XK_Print,                 spawn,                {.v = (const char*[]){ "dmenurecord", NULL } } },
+  { 0,                  XK_Menu,                  spawn,                {.v = (const char*[]){ "ret.sh", NULL } } },
   { MODKEY|ShiftMask,   XK_Delete,                quit,                 {0} },
   { MODKEY,             XK_Delete,                quit,                 {1} },
   { MODKEY,             XK_equal,                 spawn,                {.v = volume_ui_cmd } },
