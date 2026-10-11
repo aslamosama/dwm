@@ -446,7 +446,7 @@ static const char *scratchpadcmd[] = {"s", "st", "-n", "spterm", NULL};
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x28", NULL };
 const char *spcmd2[] = {"st", "-n", "spcalc", "-g", "120x28", "-e", "qalc", "--color", "--interactive", NULL };
 const char *spcmd3[] = {"qalculate-gtk", NULL };
-const char *spcmd4[] = {"st", "-n", "spmusic", "-g", "100x25", "-e", "cmus", NULL };
+const char *spcmd4[] = {"st", "-n", "spmusic", "-g", "100x25", "-e", "cliamp", NULL };
 const char *spcmd5[] = {"st", "-n", "spnotes", "-g", "120x34", "-e", "spnotes", NULL };
 static Sp scratchpads[] = {
    /* name          cmd  */
@@ -1126,6 +1126,7 @@ static const Key keys[] = {
   { 0,                  XF86XK_AudioMute,         spawn,                SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; pkill -RTMIN+8 dwmblocks") },
   { 0,                  XF86XK_AudioRaiseVolume,  spawn,                SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%- && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+; pkill -RTMIN+8 dwmblocks") },
   { 0,                  XF86XK_AudioLowerVolume,  spawn,                SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%+ && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-; pkill -RTMIN+8 dwmblocks") },
+  { 0,                  XK_F2,                    spawn,                {.v = (const char*[]){ "voxtype", "record-toggle", NULL } } },
   { 0,                  XF86XK_AudioPrev,         spawn,                {.v = (const char*[]){ "mpc", "prev", NULL } } },
   { 0,                  XF86XK_AudioNext,         spawn,                {.v = (const char*[]){ "mpc",  "next", NULL } } },
   { 0,                  XF86XK_AudioPause,        spawn,                {.v = (const char*[]){ "mpc", "pause", NULL } } },
