@@ -548,6 +548,7 @@ static const Rule rules[] = {
   RULE(.title    = "newsboat",      .tags = 1 << 5,       .switchtag = 3)
   RULE(.class    = "Zathura",       .tags = 1 << 6,       .switchtag = 3)
   RULE(.title    = "nsxiv",         .tags = 1 << 7,       .switchtag = 3)
+  RULE(.class    = "Nsxiv", .instance = "wallpick",       .tags = 1 << 7,       .isfloating =1,  .switchtag = 3)
   RULE(.class    = "handler_output",.tags = 1 << 7,       .switchtag = 0)
   RULE(.class    = "Gimp",          .tags = 1 << 8,       .switchtag = 3)
   RULE(.class    = "ret.sh",        .tags = 1 << 8,       .switchtag = 3)
